@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
+
 //import Sunmoon from "./Sunmoon";
 // ! import name from "address";=== address에 있는 내용을 name이라는 이름으로 사용함
 const root = ReactDOM.createRoot(document.getElementById("root"));
