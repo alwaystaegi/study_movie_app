@@ -1,13 +1,13 @@
 import React from "react";
 import Movie from "./Movie";
 
-const movies = [
+const 영화목록 = [
   {
     id: 1,
     영화명: "탑건",
     주연배우: "황정민",
     장르: "느와르",
-    상영시간: ["10:00", "12:00", "15:00"],
+    상영시간: ["10:00", "12:00", "15:00", "15:00", ["1", "1"]],
     티켓가격: 15000,
   },
   {
@@ -22,12 +22,13 @@ const movies = [
     영화명: "곡성",
     주연배우: "황정음",
     장르: "굿",
-    티켓가격: 8000,
+    // 티켓가격: 8000,
   },
 ];
 
-function App() {
-  const a = <h1>a</h1>;
+function Movies() {
+  const a = new Date();
+  console.log(a);
   return (
     <>
       {/* <App /> */}
@@ -47,12 +48,12 @@ function App() {
           </div>
         );
       })}
-
+      <hr />
       <Movie
         movieName="마더"
         actor="김혜자"
         genre="액션"
-        time={["15:00", "15:00", "16:00"]}
+        time={["15:00", "15:00", "16:00", { time: "1" }]}
         price={5000}
       />
       {/* <hr></hr>
@@ -81,4 +82,4 @@ function App() {
   );
 }
 
-export default App;
+export default Movies;
