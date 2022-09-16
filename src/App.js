@@ -1,5 +1,4 @@
-import { render } from "@testing-library/react";
-import React, { useState } from "react";
+import React from "react";
 // import Movies from "./components/Movies";
 //state.../...//..././../.../..../...../../../././.../...../..../...../..../
 // function App() {
@@ -18,11 +17,8 @@ class App extends React.Component {
     //this.setState({ count: this.state.count + 1 });
   };
   감소함수 = () => {
-    this.state.count--;
-    this.setState({
-      function(현재스테이트) {
-        return { count: 현재스테이트.count - 1 };
-      },
+    this.setState(function (현재스테이트) {
+      return { count: 현재스테이트.count - 1 };
     });
   };
   render() {
