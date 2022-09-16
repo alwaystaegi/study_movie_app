@@ -33,17 +33,17 @@ function Movies() {
     <>
       {/* <App /> */}
       <h1 id="one">영화앱</h1>
-      {movies.map(function (movie) {
+      {영화목록.map(function (영화목록) {
         return (
-          <div key={movie.id}>
+          <div key={영화목록.id}>
             <hr></hr>
             <Movie
-              key={movie.id}
-              movieName={movie.영화명}
-              actor={movie.주연배우}
-              genre={movie.장르}
-              time={movie.상영시간}
-              price={movie.티켓가격}
+              key={영화목록.id}
+              movieName={영화목록.영화명}
+              actor={영화목록.주연배우}
+              genre={영화목록.장르}
+              time={영화목록.상영시간}
+              price={영화목록.티켓가격}
             />
           </div>
         );
