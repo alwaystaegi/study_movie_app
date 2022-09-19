@@ -1,6 +1,5 @@
 import React from "react";
 // import Movies from "./components/Movies";
-//state.../...//..././../.../..../...../../../././.../...../..../...../..../
 // function App() {
 //   return <div>hello world</div>;
 // }
