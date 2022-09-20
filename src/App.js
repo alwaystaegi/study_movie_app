@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import "./App.css";
 import Movies from "./components/Movies";
 import Menu from "./components/Menu";
+import Youtube from "./components/Youtube";
 function Home() {
   return <h2>홈 컴포넌트</h2>;
 }
@@ -23,6 +24,7 @@ function App(props) {
         <Route path="/popular" element={<Movies apiPath="popular" />} />
         <Route path="/upcoming" element={<Movies apiPath="upcoming" />} />
         <Route path="/now_playing" element={<Movies apiPath="now_playing" />} />
+        <Route path="/youtube" element={<Youtube />} />
       </Routes>
     </BrowserRouter>
   );

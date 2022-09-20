@@ -21,6 +21,9 @@ function Menu() {
         <li>
           <Link to="/about">🙋about us</Link>
         </li>
+        <li>
+          <Link to="/youtube">Youtube</Link>
+        </li>
       </ul>
     </nav>
   );
