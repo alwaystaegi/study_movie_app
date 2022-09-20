@@ -40,7 +40,7 @@ function ClickCounter(props) {
   return (
     <>
       <div className="container">
-        <h1>{props.title?props.title:"시간 카운터"}</h1>
+        <h1>{props.title ? props.title : "시간 카운터"}</h1>
         <div>Count : {count}</div>
         <div>타이머의 ID : {id}</div>
         <button onClick={Timer}>시작</button>

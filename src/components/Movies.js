@@ -1,84 +1,76 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import Movie from "./Movie";
+import "./Movie.css";
 
-const 영화목록 = [
-  {
-    id: 1,
-    영화명: "탑건",
-    주연배우: "황정민",
-    장르: "느와르",
-    상영시간: ["10:00", "12:00", "15:00", "15:00", ["1", "1"]],
-    티켓가격: 15000,
-  },
-  {
-    id: 2,
-    영화명: "VforVendetta",
-    주연배우: "하정우",
-    장르: "정치",
-    티켓가격: 5000,
-  },
-  {
-    id: 3,
-    영화명: "곡성",
-    주연배우: "황정음",
-    장르: "굿",
-    // 티켓가격: 8000,
-  },
-];
+function Movies(props) {
+  const [movies, setMovies] = useState([]);
+  // const [result, setResult] = useState([]);
+  const [prev, setPrev] = useState("");
+  const [page, setPage] = useState("1");
+  // //!async&&&await async===이것이 끝날때까지 기다리기,... await=== 기다려야할 요소
+  async function getMovieAPI() {
+    if (prev !== "" && props.apiPath === prev) {
+      return;
+    }
 
-function Movies() {
-  const a = new Date();
-  console.log(a);
+    const result = await axios.get(
+      `https://api.themoviedb.org/3/movie/${props.apiPath}?api_key=b3982d81af5440cf98354d86429224d1&language=ko&region=KR&&page=${page}`
+    );
+    console.log(result);
+    // switch (props.apiPath) {
+    //   case "popular":
+    //     setResult(
+    //       await axios.get(
+    //         `https://api.themoviedb.org/3/movie/popular?api_key=b3982d81af5440cf98354d86429224d1&language=ko&region=KR`
+    //       )
+    //     );
+    //     break;
+    //   case "upcoming":
+    //     setResult(
+    //       await axios.get(
+    //         `https://api.themoviedb.org/3/movie/upcoming?api_key=b3982d81af5440cf98354d86429224d1&language=ko&region=KR`
+    //       )
+    //     );
+    //     break;
+    //   case "now_playing":
+    //     setResult(
+    //       await axios.get(
+    //         `https://api.themoviedb.org/3/movie/now_playing?api_key=b3982d81af5440cf98354d86429224d1&language=ko&region=KR`
+    //       )
+    //     );
+    //     break;
+    // }
+    // setMovies(result.data.results);
+    if (result !== []) setMovies(result.data.results);
+    setPrev(props.apiPath);
+    // setMovies([1, 2, 3]);
+  }
+
+  useEffect(() => {
+    getMovieAPI();
+  }, [props.apiPath]);
+
   return (
-    <>
-      {/* <App /> */}
-      <h1 id="one">영화앱</h1>
-      {영화목록.map(function (영화목록) {
-        return (
-          <div key={영화목록.id}>
-            <hr></hr>
+    <div key={props}>
+      <>
+        {movies.map(function (ele, idx) {
+          return (
             <Movie
-              key={영화목록.id}
-              movieName={영화목록.영화명}
-              actor={영화목록.주연배우}
-              genre={영화목록.장르}
-              time={영화목록.상영시간}
-              price={영화목록.티켓가격}
+              title={ele.title}
+              poster={ele.backdrop_path}
+              overview={ele.overview}
+              vote={ele.vote_average}
+              adult={ele.adult}
+              lang={ele.original_language}
+              date={ele.release_date}
+              id={ele.id}
+              key={idx}
             />
-          </div>
-        );
-      })}
-      <hr />
-      <Movie
-        movieName="마더"
-        actor="김혜자"
-        genre="액션"
-        time={["15:00", "15:00", "16:00", { time: "1" }]}
-        price={5000}
-      />
-      {/* <hr></hr>
-      <Movie
-        movieName="탑건 매버릭"
-        actor="톰크루즈"
-        genre="비행시뮬레이션"
-        time={["10:00", "12:00", "15:00"]}
-      />
-      <hr></hr>
-      <hr></hr>
-      <Movie
-        movieName="브이포벤데타"
-        actor="나탈리 포트만"
-        genre="정치"
-        // time={["10:50", "12:50"]}
-      />
-      <hr></hr>
-      <Movie
-        movieName="곡성"
-        actor="황정민"
-        genre="굿"
-        time={["11:00", "12:00", "13:00"]}
-      /> */}
-    </>
+          );
+        })}
+      </>
+    </div>
   );
 }
 

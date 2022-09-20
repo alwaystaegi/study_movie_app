@@ -1,49 +1,30 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
-import Movie from "./components/Movie";
+//! react-router-dom 사용===> Link tag...> a tag와 비슷함 but 새로 필요한 요소만 가져옴 ex)만약 모든 페이지에 둘리가 기본으로 있다? 둘리는 새로 가져오지 않고 그대로 사용
+
+import React from "react";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import "./App.css";
-
+import Movies from "./components/Movies";
+import Menu from "./components/Menu";
+function Home() {
+  return <h2>홈 컴포넌트</h2>;
+}
+function About() {
+  return <h2>개발자 소개</h2>;
+}
 function App(props) {
-  const [movies, setMovies] = useState([]);
-
-  // //!async&&&await async===이것이 끝날때까지 기다리기,... await=== 기다려야할 요소
-  async function getMovieAPI() {
-    if (0 < movies.length) {
-      return;
-    }
-
-    const result = await axios.get(
-      "https://api.themoviedb.org/3/movie/popular?api_key=b3982d81af5440cf98354d86429224d1&language=ko"
-    );
-    // setMovies(result.data.results);
-    setMovies(result.data.results);
-    // setMovies([1, 2, 3]);
-  }
-
-  useEffect(() => {
-    getMovieAPI();
-  }, []);
-
   return (
-    <div key={props}>
-      <>
-        {movies.map(function (ele, idx) {
-          return (
-            <Movie
-              title={ele.title}
-              poster={ele.backdrop_path}
-              overview={ele.overview}
-              vote={ele.vote_average}
-              adult={true}
-              lang={ele.original_language}
-              date={ele.release_date}
-              id={ele.id}
-              key={idx}
-            />
-          );
-        })}
-      </>
-    </div>
+    <BrowserRouter>
+      <div>
+        <Menu />
+      </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/popular" element={<Movies apiPath="popular" />} />
+        <Route path="/upcoming" element={<Movies apiPath="upcoming" />} />
+        <Route path="/now_playing" element={<Movies apiPath="now_playing" />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

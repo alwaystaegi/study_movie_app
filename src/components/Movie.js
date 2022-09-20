@@ -13,7 +13,7 @@ function Movie(props) {
     <div className="movie__data">
       <h3 className="movie__title">{props.title}</h3>
       <div className="movie__poster">
-        <div className="movie__adult">{props.adult ? "19" : "X"}</div>
+        {props.adult ? <div className="movie__adult">19</div> : <div />}
 
         <img
           src={`http://image.tmdb.org/t/p/original${props.poster}`}
