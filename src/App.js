@@ -6,6 +6,7 @@ import "./App.css";
 import Movies from "./components/Movies";
 import Menu from "./components/Menu";
 import Youtube from "./Youtube/Youtube_main";
+import ClickCounter from "./components/ClickCounter";
 function Home() {
   return <h2>홈 컴포넌트1</h2>;
 }
@@ -25,6 +26,7 @@ function App(props) {
         <Route path="/upcoming" element={<Movies apiPath="upcoming" />} />
         <Route path="/now_playing" element={<Movies apiPath="now_playing" />} />
         <Route path="/youtube" element={<Youtube />} />
+        <Route path="/clickcounter" element={<ClickCounter />} />
       </Routes>
     </HashRouter>
   );

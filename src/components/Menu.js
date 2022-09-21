@@ -24,6 +24,9 @@ function Menu() {
         <li>
           <Link to="/youtube">Youtube</Link>
         </li>
+        <li>
+          <Link to="ClickCounter">counter</Link>
+        </li>
       </ul>
     </nav>
   );

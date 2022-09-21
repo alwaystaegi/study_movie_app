@@ -1,8 +1,3 @@
-body {
-  width: 100%;
-  background-color: #212121;
-}
-
 .yt__main {
   border: 2px solid black;
   font-size: 15px;
@@ -68,8 +63,7 @@ body {
   justify-content: center;
   align-items: start;
 }
-.LTE {
-}
+
 .title_underbar {
   display: flex;
   color: gray;
