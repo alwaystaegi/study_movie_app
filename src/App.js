@@ -1,7 +1,7 @@
 //! react-router-dom 사용===> Link tag...> a tag와 비슷함 but 새로 필요한 요소만 가져옴 ex)만약 모든 페이지에 둘리가 기본으로 있다? 둘리는 새로 가져오지 않고 그대로 사용
 
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Movies from "./components/Movies";
 import Menu from "./components/Menu";
@@ -14,7 +14,7 @@ function About() {
 }
 function App(props) {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <div>
         <Menu />
       </div>
@@ -26,7 +26,7 @@ function App(props) {
         <Route path="/now_playing" element={<Movies apiPath="now_playing" />} />
         <Route path="/youtube" element={<Youtube />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 

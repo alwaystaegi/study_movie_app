@@ -1,21 +1,32 @@
-.all {
-  background-color: aquamarine;
+body {
+  width: 100%;
+  background-color: #212121;
 }
+
 .yt__main {
   border: 2px solid black;
-  background-color: #212121;
   font-size: 15px;
   color: white;
+  width: 100%;
 }
-.yt__top {
-  background-color: #212121;
+.yt__top,
+.yt__top1,
+.findbar,
+.underbar {
   display: flex;
   justify-content: space-between;
 }
 .yt__top_item:first-child {
   margin-left: 30px;
 }
-.yt__top_item_left {
+.yt_top_item {
+  position: relative;
+}
+.yt__top_item_left,
+.yt__top1_right,
+.yt__top1_left,
+.findbar_index,
+.ub_tag {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,30 +34,98 @@
 .yt__top_item_left > span {
   margin: 3px;
 }
-.yt__top1 {
-  display: flex;
-  justify-content: space-between;
-}
-.yt__top1_right {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .yt__icon_text {
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-}
-.yt__top1_left {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 .yt__top1_left > div {
   margin: 10px;
 }
 .Profile {
   display: flex;
-  padding: 3px;
+  padding: 1px 1px;
   background-color: brown;
   border-radius: 100%;
+}
+.findbar_index > div {
+  box-shadow: 0px 0px 0px 3px #404040;
+  border-radius: 20px;
+  margin: 10px;
+  padding: 4px;
+  background-color: #333333;
+}
+.findbar_index > div:focus {
+  background-color: white;
+  color: black;
+  box-shadow: 0px 0px 0px 3px #ffffff;
+}
+/* todo findbar_index 클릭시 유지되는? 상태로 만들기 like radio button */
+.video {
+  flex-direction: column;
+}
+.overview {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+.title_underbar {
+  display: flex;
+  color: gray;
+  font-size: small;
+}
+.title_underbar > div {
+  margin-right: 3px;
+}
+.title_underbar > img {
+  width: 50px;
+  border-radius: 50%;
+}
+\ .video_image {
+  position: relative;
+}
+.video_image > img {
+  width: 100%;
+}
+.video_option {
+  background-color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  visibility: hidden;
+}
+.video: {
+  visibility: hidden;
+}
+
+.video_option > div {
+  border-left: 1px solid gray;
+}
+.shorts_bar {
+  border-top: 5px solid gray;
+}
+.shorts {
+  display: inline-flex;
+  position: relative;
+  overflow: 100%;
+}
+.shorts > div {
+  margin: 5px;
+}
+.shorts > div > img {
+  width: 100px;
+  height: 300px;
+}
+.shortsTitle {
+  position: absolute;
+  bottom: 8px;
+}
+.shortsVote {
+  font-size: small;
+}
+.underbar {
+  position: fixed;
+  bottom: 0%;
+  width: 100%;
+  z-index: 1;
+  background-color: #212121;
 }
