@@ -25,7 +25,13 @@ function Menu() {
           <Link to="/youtube">Youtube</Link>
         </li>
         <li>
-          <Link to="ClickCounter">counter</Link>
+          <Link to="/ClickCounter">counter</Link>
+        </li>
+        <li>
+          <Link to="/tailwind">tailwind</Link>
+        </li>
+        <li>
+          <Link to="/kakao">kakao</Link>
         </li>
       </ul>
     </nav>

@@ -5,8 +5,10 @@ import { HashRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Movies from "./components/Movies";
 import Menu from "./components/Menu";
-import Youtube from "./Youtube/Youtube_main";
+import Youtube from "./components/Youtube_main";
 import ClickCounter from "./components/ClickCounter";
+import Tailwind from "./components/Tailwind";
+import Kakao from "./components/kakao";
 function Home() {
   return <h2>홈 컴포넌트1</h2>;
 }
@@ -15,20 +17,28 @@ function About() {
 }
 function App(props) {
   return (
-    <HashRouter>
-      <div>
-        <Menu />
-      </div>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/popular" element={<Movies apiPath="popular" />} />
-        <Route path="/upcoming" element={<Movies apiPath="upcoming" />} />
-        <Route path="/now_playing" element={<Movies apiPath="now_playing" />} />
-        <Route path="/youtube" element={<Youtube />} />
-        <Route path="/clickcounter" element={<ClickCounter />} />
-      </Routes>
-    </HashRouter>
+    <>
+      <h1 className="text-3xl font-bold underline">Hello world!</h1>
+      <HashRouter>
+        <div>
+          <Menu />
+        </div>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/popular" element={<Movies apiPath="popular" />} />
+          <Route path="/upcoming" element={<Movies apiPath="upcoming" />} />
+          <Route
+            path="/now_playing"
+            element={<Movies apiPath="now_playing" />}
+          />
+          <Route path="/youtube" element={<Youtube />} />
+          <Route path="/clickcounter" element={<ClickCounter />} />
+          <Route path="/tailwind" element={<Tailwind />} />
+          <Route path="/kakao" element={<Kakao />} />
+        </Routes>
+      </HashRouter>
+    </>
   );
 }
 
