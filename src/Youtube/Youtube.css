@@ -68,6 +68,8 @@ body {
   justify-content: center;
   align-items: start;
 }
+.LTE {
+}
 .title_underbar {
   display: flex;
   color: gray;
@@ -91,9 +93,6 @@ body {
   position: absolute;
   right: 0px;
   top: 0px;
-  visibility: hidden;
-}
-.video: {
   visibility: hidden;
 }
 

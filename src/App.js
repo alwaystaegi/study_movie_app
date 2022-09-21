@@ -7,7 +7,7 @@ import Movies from "./components/Movies";
 import Menu from "./components/Menu";
 import Youtube from "./Youtube/Youtube_main";
 function Home() {
-  return <h2>홈 컴포넌트</h2>;
+  return <h2>홈 컴포넌트1</h2>;
 }
 function About() {
   return <h2>개발자 소개</h2>;
