@@ -18,9 +18,8 @@ function About() {
 function App(props) {
   return (
     <>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
       <HashRouter>
-        <div>
+        <div className="">
           <Menu />
         </div>
         <Routes>
